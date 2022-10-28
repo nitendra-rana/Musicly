@@ -5,4 +5,4 @@
 ![Spotify Clone](https://i.ibb.co/GH05vpS/mysicly.png)
 
 #### for live demo click
-[Here](https://music-fy-1.netlify.app/)
+[Here](https://music-ly-1.netlify.app/)
