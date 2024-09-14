@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
@@ -11,7 +11,7 @@ const CountryTracks = () => {
   const { activeSong, isPlaying } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetSongsByCountryQuery(country);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     axios
       .get(`https://geo.ipify.org/api/v2/country?apiKey=${import.meta.env.VITE_GEO_API_KEY}`) //
       .then((res) => setCountry(res?.data?.location.country))
@@ -30,7 +30,7 @@ const CountryTracks = () => {
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data?.map((song, i) => (
           <SongCard
-            key={song.key}
+            key={song.id}
             song={song}
             isPlaying={isPlaying}
             activeSong={activeSong}
